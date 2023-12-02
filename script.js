@@ -1,34 +1,26 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const cardIds = ['card1', 'card2', 'card3', 'card4', 'card5', 'card6', 'card7', 'card8', 'card9', 'card10', 'card11', 'card12'];
-    let fetchInProgress = false;
+async function getRandomCard() {
+  try {
+    const response = await fetch("https://api.scryfall.com/cards/random");
+    const data = await response.json();
 
-    async function generateRandomCard(cardId) {
-        if (!fetchInProgress) {
-            fetchInProgress = true;
-
-            try {
-                const response = await fetch('https://api.scryfall.com/cards/random');
-                const data = await response.json();
-
-                const cardElement = document.getElementById(cardId);
-                const cardImage = document.createElement('img');
-                cardImage.src = data.image_uris.normal;
-                cardImage.alt = data.name;
-
-                cardElement.innerHTML = '';
-                cardElement.appendChild(cardImage);
-            } catch (error) {
-                console.error('Error fetching random Magic card:', error);
-            } finally {
-                fetchInProgress = false;
-            }
-        }
-    }
-
-    const generateButton = document.getElementById('cardbutton');
-    generateButton.addEventListener('click', async function () {
-        for (const cardId of cardIds) {
-            await generateRandomCard(cardId);
-        }
-    });
-});
+    document.getElementById("cardName").textContent = "Card Name: " + data.name;
+    document.getElementById("cardType").textContent =
+      "Card Type: " + data.type_line;
+    document.getElementById("manaCost").textContent =
+      "Mana Cost: " + data.mana_cost;
+    document.getElementById("colors").textContent =
+      "Colors: " + (data.colors ? data.colors.join(", ") : "Colorless");
+    document.getElementById("set").textContent = "Set: " + data.set;
+    document.getElementById("rarity").textContent = "Rarity: " + data.rarity;
+    document.getElementById("cardText").textContent =
+      "Card Text: " + data.oracle_text;
+    document.getElementById("powerToughness").textContent =
+      "Power/Toughness: " +
+      (data.power && data.toughness
+        ? data.power + "/" + data.toughness
+        : "N/A");
+    document.getElementById("cardImage").src = data.image_uris.normal;
+  } catch (error) {
+    console.error("Error fetching random Magic card:", error);
+  }
+}

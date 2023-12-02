@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" type="text/css" href="style.css" /> 
-        <script src="script.js"></script>
-    </head>
-    <body>
-        <div class="container">
-            <div class="card" id="card1"></div>
-            <div class="card" id="card2"></div>
-            <div class="card" id="card3"></div>
-            <div class="card" id="card4"></div>
-            <div class="card" id="card5"></div>
-            <div class="card" id="card6"></div>
-            <div class="card" id="card7"></div>
-            <div class="card" id="card8"></div>
-            <div class="card" id="card9"></div>
-            <div class="card" id="card10"></div>
-            <div class="card" id="card11"></div>
-            <div class="card" id="card12"></div>
-        <button id="cardbutton">Let's see some cards</button>
-        </div>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>Random Magic Card Viewer</h1>
 
-            
-        
-    </body>
+    <button onclick="getRandomCard()">Get Random Card</button>
+
+    <div id="cardContainer">
+      <img id="cardImage" alt="Card Image" src="./images/magiccard.webp" />
+      <h2 id="cardName"></h2>
+      <p id="cardType"></p>
+      <p id="manaCost"></p>
+      <p id="colors"></p>
+      <p id="set"></p>
+      <p id="rarity"></p>
+      <p id="cardText"></p>
+      <p id="powerToughness"></p>
+    </div>
+  </body>
 </html>
