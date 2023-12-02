@@ -6,12 +6,14 @@
     <script src="script.js"></script>
   </head>
   <body>
+    <main>
     <h1>Random Magic Card Viewer</h1>
 
     <button onclick="getRandomCard()">Get Random Card</button>
-
-    <div id="cardContainer">
-      <img id="cardImage" alt="Card Image" src="./images/magiccard.webp" />
+    <div class="text-container">
+<img id="cardImage" alt="Card Image" src="./images/magiccard.webp" />
+      <div class="card-background">
+      <div id="cardContainer"> 
       <h2 id="cardName"></h2>
       <p id="cardType"></p>
       <p id="manaCost"></p>
@@ -21,5 +23,8 @@
       <p id="cardText"></p>
       <p id="powerToughness"></p>
     </div>
-  </body>
+  </div> 
+</div>
+</main>
+ </body>
 </html>
