@@ -1,17 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300&family=Staatliches&display=swap');
 
+:root {
+  --licorice: #1B1212;
+  --crimson: #990000; 
+  --light-gray: #f7f7f7; 
+}
+
 body {
+  padding: 0;
+  margin: 0;
 }
 
 header{
-  background-color: black;
-  color: white;
+  background-color: var(--licorice);
+  color: var(--light-gray);
   background-size: cover;
+  padding: 10px;
 }
 
 button {
-  background-color: black;
-  color: white;
+  background-color: var(--licorice);
+  color: var(--light-gray);
   margin: 10px;
   padding: 10px;
   width: 200px;
@@ -22,7 +31,6 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
   margin: 5%;
   border-radius: 9px;
   padding-top: 20px;
@@ -34,21 +42,22 @@ button {
   justify-content: center;
   flex-direction: row;
 }
+
 #cardImage {
   position: relative;
   width: 443px;
   height: 632px;
-  margin: 15px;
+  margin: 20px;
 }
 
 .card-background {
   position: relative;
-  background-color: rgb(0, 0, 0);
-  color: white;
+  background-color: var(--licorice);
+  color: var(--light-gray);
   width: 443px;
   height: 632px;
   border-radius: 20px;
-  margin: 15px;
+  margin: 20px;
 }
 
 #cardContainer {
@@ -61,9 +70,6 @@ button {
   top: 50%;
   left: 50%;
   transform:translate(-50%, -50%);
-  border-style: solid;
-  border: 5px;
-  border-color: white;
 }
 
 .about {
@@ -72,6 +78,14 @@ button {
   grid-template-columns: auto, auto, auto;
   column-count: 4;
   margin: 5%;
+}
+
+.about h1 {
+  color: var(--crimson);
+}
+
+p {
+  font-family: 'Red Hat Display', sans-serif;
 }
 
 .about-text {
@@ -94,16 +108,10 @@ button {
 }
 
 footer {
-  background-color: black;
-  color: white;
+  background-color: var(--licorice);
+  color: var(--light-gray);
+  padding: 10px;
 }
-
-
-
-
-
-
-
 
 
 @media (max-width: 1000px) {
@@ -132,8 +140,5 @@ footer {
     height: 238px;
     overflow: auto;
   }
-
-
-
   
 }
